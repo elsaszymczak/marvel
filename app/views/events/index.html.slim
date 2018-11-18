@@ -1,11 +1,11 @@
 .wrapper
 
 .container
-  h2.bold FEATURED EVENTS
+  h2.bold.margin FEATURED EVENTS
   .row
     .cards
       - @events.each do |event|
         div class='col-xs-12 col-md-4'
           = link_to event_path(event) do
-            = render 'shared/card', event: event
+            = render 'shared/card', element: event
 
