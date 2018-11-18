@@ -1,0 +1,27 @@
+.wrapper
+  #banner style='background-image: url(#{@event.cover_picture})'
+    .banner-content
+      h1 = @event.name
+  .container
+    h2 Discover all the comics associated to #{@event.name}
+    .row
+      .cards
+        - @event.comics.each do |comic|
+          div class='col-xs-12 col-md-4'
+            = link_to event_comic_path(@event, comic) do
+              div class='card' style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url("#{comic.picture}");'
+                .card-description
+                  = comic.name
+    h2 Discover all the characters associated to #{@event.name}
+    .row
+      .cards
+        - @event.characters.each do |character|
+          div class='col-xs-12 col-md-4'
+            = link_to event_character_path(@event, character) do
+              div class='card' style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url("#{character.picture}");'
+                .card-description
+                  = character.name
+
+
+
+

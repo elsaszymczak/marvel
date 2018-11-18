@@ -1,6 +1,16 @@
 / <!-- <h1>Pages#home</h1>
 / <p>Find me in app/views/pages/home.html.erb</p> -->
 
-h1 Marvel
-p Find me in app/views/pages/home.html.erb
+= render 'shared/banner-home'
+
+.container
+  h1 Discover all the events
+  .row
+    .cards
+      - @events.each do |event|
+        div class='col-xs-12 col-md-4'
+          = link_to event_path(event) do
+            div class='card' style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url("#{event.picture}");'
+              .card-description
+                = event.name
 
