@@ -1,9 +1,13 @@
 .wrapper
-  #banner style='background-image: url(#{@event.cover_picture})'
-    .banner-content
-      h1 = @event.name
+  #banner style='background-image: linear-gradient(to right, rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(#{@event.cover_picture})'
+    .container
+      .banner-content
+        h1 = @event.name.upcase
   .container
     h2 Discover all the comics associated to #{@event.name}
+    = link_to events_path, class: 'link' do
+      i.fas.fa-long-arrow-alt-left
+      |  back to events
     .row
       .cards
         - @event.comics.each do |comic|
