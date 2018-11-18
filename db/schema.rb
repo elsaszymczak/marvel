@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_18_050704) do
+ActiveRecord::Schema.define(version: 2018_11_18_055856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,15 @@ ActiveRecord::Schema.define(version: 2018_11_18_050704) do
     t.string "cover_picture"
   end
 
+  create_table "joint", force: :cascade do |t|
+    t.bigint "comic_id"
+    t.bigint "character_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["character_id"], name: "index_joint_on_character_id"
+    t.index ["comic_id"], name: "index_joint_on_comic_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -58,4 +67,6 @@ ActiveRecord::Schema.define(version: 2018_11_18_050704) do
 
   add_foreign_key "characters", "events"
   add_foreign_key "comics", "events"
+  add_foreign_key "joint", "characters"
+  add_foreign_key "joint", "comics"
 end
