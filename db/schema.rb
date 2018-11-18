@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_18_055856) do
+ActiveRecord::Schema.define(version: 2018_11_18_075154) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 2018_11_18_055856) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_characters_on_event_id"
+  end
+
+  create_table "comic_characters", force: :cascade do |t|
+    t.bigint "comic_id"
+    t.bigint "character_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["character_id"], name: "index_comic_characters_on_character_id"
+    t.index ["comic_id"], name: "index_comic_characters_on_comic_id"
   end
 
   create_table "comics", force: :cascade do |t|
@@ -44,15 +53,6 @@ ActiveRecord::Schema.define(version: 2018_11_18_055856) do
     t.string "cover_picture"
   end
 
-  create_table "joint", force: :cascade do |t|
-    t.bigint "comic_id"
-    t.bigint "character_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["character_id"], name: "index_joint_on_character_id"
-    t.index ["comic_id"], name: "index_joint_on_comic_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2018_11_18_055856) do
   end
 
   add_foreign_key "characters", "events"
+  add_foreign_key "comic_characters", "characters"
+  add_foreign_key "comic_characters", "comics"
   add_foreign_key "comics", "events"
-  add_foreign_key "joint", "characters"
-  add_foreign_key "joint", "comics"
 end

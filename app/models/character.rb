@@ -1,5 +1,5 @@
 class Character < ApplicationRecord
   belongs_to :event
-  has_many :joints
-  has_many :comics, through: :joints
+  has_many :comic_characters
+  has_many :comics, through: :comic_characters
 end

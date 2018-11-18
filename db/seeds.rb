@@ -30,7 +30,7 @@ events.each do |event|
   end
   start_date = event['start']
   end_date = event['end']
-  event_picture = event['thumbnail']['path'] + '/landscape_large.' + event['thumbnail']['extension']
+  event_picture = event['thumbnail']['path'] + '/standard_fantastic.' + event['thumbnail']['extension']
   cover_picture = event['thumbnail']['path'] + '/landscape_incredible.' + event['thumbnail']['extension']
 
   puts "Creation of event instances"
@@ -53,7 +53,7 @@ events.each do |event|
     characters.first(10).each do |character|
       puts "Retrieving data from character"
       puts name = character['name']
-      puts picture = character['thumbnail']['path'] + '/landscape_large.' + character['thumbnail']['extension']
+      puts picture = character['thumbnail']['path'] + '/standard_fantastic.' + character['thumbnail']['extension']
 
       puts "Creation of character instances"
       event_character = Character.create(name: name, picture: picture, event: marvel_event)
@@ -78,7 +78,7 @@ events.each do |event|
     comics.first(10).each do |comic|
       puts "Creation of comic instances"
       title = comic['title']
-      picture = comic['thumbnail']['path'] + '/landscape_large.' + comic['thumbnail']['extension']
+      picture = comic['thumbnail']['path'] + '/standard_fantastic.' + comic['thumbnail']['extension']
       puts "Creation of comic instances"
       event_comic = Comic.create(name: title, picture: picture, event: marvel_event)
       puts event_comic.name

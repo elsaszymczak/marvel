@@ -10,7 +10,5 @@
       - @events.each do |event|
         div class='col-xs-12 col-md-4'
           = link_to event_path(event) do
-            div class='card' style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url("#{event.picture}");'
-              .card-description
-                = event.name
+            = render 'shared/card', element: event
 
