@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :events, only: [:index, :show] do
-    resources :characters, only: [:index, :show]
-    resources :comics, only: [:index, :show]
+  resources :events, except: [:edit, :update] do
+    resources :characters, except: [:edit, :update]
+    resources :comics, except: [:edit, :update]
   end
 end
