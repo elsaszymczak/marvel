@@ -1,0 +1,6 @@
+= simple_form_for element, html: { class: 'form' } do |f|
+  = f.input :name
+  = f.input :photo
+  = f.input :photo_cache, as: :hidden
+  .submit-btn.text-center
+    = f.button :submit, 'save'

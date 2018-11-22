@@ -1,27 +1,27 @@
-#banner {
+.banner {
   color: white;
   // text-align: center;
-  height: 50vh;
+  height: 70vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   background-position: center;
   display: flex;
   align-items: center;
+  clip-path: polygon(0 0, 0 100%, 100% 82%, 100% 0);
   // justify-content: center;
 }
-.banner-content {
-  // background: $red;
-  // border-radius: 3px;
-  // padding: 20px;
-  // opacity: 0.6;
-}
-#banner h1 {
+
+.banner h1 {
   font-size: 50px;
   font-weight: 800;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   opacity: 1;
+  display: inline-block;
+  background: black;
+  padding: 10px;
+
 }
-#banner p {
+.banner p {
   font-size: 25px;
   font-weight: lighter;
   color: rgb(255, 255, 255);
@@ -29,16 +29,7 @@
   margin-bottom: 30px;
 }
 
-
 #banner-home {
-  background-image: url('banner-image.jpg');
-    color: white;
-  text-align: center;
-  height: 70vh;
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background-size: cover !important;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-image: linear-gradient(to right, rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('banner-image');
 }
+

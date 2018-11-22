@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 ruby '2.4.4'
 
 gem 'bootsnap', require: false
-gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
@@ -17,6 +16,11 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem "slim-rails"
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
+
+
+
 
 
 group :development do

@@ -4,10 +4,14 @@ html
     meta charset="UTF-8"
     meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"
     meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"
-    title marvel
+    title MARVEL
     = csrf_meta_tags
     = action_cable_meta_tag
     = stylesheet_link_tag 'application', media: 'all'
+    = favicon_link_tag
+
+    link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    script src="https://cdn.jsdelivr.net/npm/flatpickr"
     / = stylesheet_pack_tag 'application', media: 'all'
     /! Uncomment if you import CSS in app/javascript/packs/application.js
   body

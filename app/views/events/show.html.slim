@@ -1,25 +1,27 @@
-.wrapper
-  #banner style='background-image: linear-gradient(to right, rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(#{@event.cover_picture})'
-    .container
-      .banner-content
-        h1 = @event.name.upcase
-  .container
-    h2 Discover all the comics associated to #{@event.name}
-    = link_to events_path, class: 'link' do
-      i.fas.fa-long-arrow-alt-left
-      |  back to events
+= render 'shared/banner-show', element: @event
+.container
+  .title-container.margin-bottom.margin-top
+    h2.bold.margin-bottom.margin-top.medium COMICS
+    = link_to new_event_comic_path(@event) do
+      i.fa.fa-plus-circle
+  = link_to events_path, class: 'link' do
+    i.fas.fa-long-arrow-alt-left
+    |  back to events
     .row
       .cards
         - @event.comics.each do |comic|
-          div class='col-xs-12 col-md-4'
-            = link_to event_comic_path(@event, comic) do
+          .col-xs-12.col-md-3
+            = link_to comic_path(comic) do
               = render 'shared/card', element: comic
-    h2 Discover all the characters associated to #{@event.name}
+  .title-container.margin-bottom.margin-top
+    h2.bold.margin-bottom.margin-top.medium CHARACTERS
+    = link_to new_event_character_path(@event) do
+      i.fa.fa-plus-circle
     .row
       .cards
         - @event.characters.each do |character|
-          div class='col-xs-12 col-md-4'
-            = link_to event_character_path(@event, character) do
+          .col-xs-12.col-md-3
+            = link_to character_path(character) do
               = render 'shared/card', element: character
 
 

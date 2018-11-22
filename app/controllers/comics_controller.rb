@@ -1,5 +1,4 @@
 class ComicsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_comic, only: [:show, :destroy]
 
   def index
@@ -7,6 +6,8 @@ class ComicsController < ApplicationController
   end
 
   def show
+    @comics = Comic.all
+    @event = @comic.event
   end
 
   def new
@@ -29,7 +30,7 @@ class ComicsController < ApplicationController
   private
 
   def comic_params
-    params.require(:comic).permit(:name, :picture)
+    params.require(:comic).permit(:name, :photo)
   end
 
   def set_comic

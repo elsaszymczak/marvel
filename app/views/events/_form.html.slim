@@ -1,0 +1,10 @@
+= simple_form_for event, html: { class: 'form' } do |f|
+  h2.text-center.margin-bottom.bold ADD YOUR EVENT
+  = f.input :name
+  = f.input :wiki_link
+  = f.input :start_date, input_html: { class: "datepicker"}
+  = f.input :end_date, input_html: { class: "datepicker"}
+  = f.input :photo
+  = f.input :photo_cache, as: :hidden
+  .submit-btn.text-center
+    = f.button :submit, 'save'

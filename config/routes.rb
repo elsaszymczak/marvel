@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :events, except: [:edit, :update] do
-    resources :characters, except: [:edit, :update]
-    resources :comics, except: [:edit, :update]
+    resources :characters, only: [:new, :create]
+    resources :comics, only: [:new, :create]
   end
+
+  resources :characters, only: [:index, :show, :destroy]
+  resources :comics, only: [:index, :show, :destroy]
 end

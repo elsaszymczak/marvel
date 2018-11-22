@@ -1,5 +1,4 @@
 class CharactersController < ApplicationController
-    skip_before_action :authenticate_user!, only: [:index, :show]
     before_action :set_character, only: [:show, :destroy]
 
   def index
@@ -7,6 +6,8 @@ class CharactersController < ApplicationController
   end
 
   def show
+    @characters = Character.all
+    @event = @character.event
   end
 
 
@@ -30,7 +31,7 @@ class CharactersController < ApplicationController
   private
 
   def character_params
-    params.require(:character).permit(:name, :picture)
+    params.require(:character).permit(:name, :photo)
   end
 
   def set_character

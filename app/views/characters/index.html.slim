@@ -1,0 +1,11 @@
+.wrapper
+
+.container
+  h2.bold.margin CHARACTERS
+  .row
+    .cards
+      - @characters.each do |character|
+        div class='col-xs-12 col-md-3'
+          = link_to character_path(character) do
+            = render 'shared/card', element: character
+

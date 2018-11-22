@@ -1,0 +1,23 @@
+
+= render 'shared/banner-show', element: @character
+.container
+  - if @character.comics.any?
+      h2.bold.margin-bottom.margin-top.medium #{@character.name.upcase}: COMICS
+  .row
+    .cards.clearfix
+      - @character.comics.each do |comic|
+        div class='col-xs-12 col-md-3'
+          = link_to comic_path(comic) do
+            = render 'shared/card', element: comic
+
+  h2.bold.margin-bottom.margin-top.medium #{@event.name.upcase} OTHER CHARACTERS
+  .row
+    .cards
+      - @event.characters.each do |character|
+        div class='col-xs-12 col-md-3'
+          = link_to character_path(character) do
+            = render 'shared/card', element: character
+
+
+
+

@@ -1,0 +1,11 @@
+.wrapper
+
+.container
+  h2.bold.margin COMICS
+  .row
+    .cards
+      - @comics.each do |comic|
+        div class='col-xs-12 col-md-3'
+          = link_to comic_path(comic) do
+            = render 'shared/card', element: comic
+

@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-  skip_before_action :authenticate_user!
   before_action :set_event, only: [:show, :destroy]
 
   def index
@@ -29,7 +28,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :start_date, :end_date, :picture, :wiki_link)
+    params.require(:event).permit(:name, :start_date, :end_date, :photo, :wiki_link)
   end
 
   def set_event
