@@ -3,6 +3,7 @@ class CharactersController < ApplicationController
 
   def index
     @characters = Character.all
+  end
 
   def show
     @characters = Character.all
@@ -23,7 +24,7 @@ class CharactersController < ApplicationController
        @character.reload
       respond_to do |format|
         format.html { redirect_to event_path(@event) }
-        format.js  { render layout: false, content_type: 'text/javascript' } # <-- will render `app/views/reviews/create.js.erb`
+        format.js   # <-- will render `app/views/reviews/create.js.erb`
       end
     else
       respond_to do |format|

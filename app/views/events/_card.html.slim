@@ -1,15 +1,11 @@
 .col-xs-12.col-sm-6.col-md-4
   li data-id='event-#{event.id}'
-    = link_to event_path(event) do
-      .card-container
-        .card
-          .card-content
-            - if event.photo.present?
-              .card-image style='background-image: url("#{cl_image_path event.photo}");'
-            - else
-              .card-image style='background-image: url("https://unsplash.com/photos/7DVmV22nieQ");'
-          .card-footer
-            h2.bold = event.name
-            / = link_to event_path(event), class: 'card_link', method: :delete, remote: true do
-            /   i.fas.fa-times
-
+    .card-container
+      .card
+        .card-content
+          = link_to event_path(event) do
+            .card-image style='background-image: url("#{event.photo.url}");'
+        .card-footer
+          h2.bold = event.name
+          = link_to event_path(event), class: 'card_link-delete', method: :delete, remote: true do
+              i.fas.fa-times

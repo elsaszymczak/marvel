@@ -1,12 +1,11 @@
 .col-xs-12.col-sm-6.col-md-4
   li data-id='character-#{character.id}'
-    = link_to character_path(character) do
-      .card-container
-        .card
-          .card-content
-            .card-image style='background-image: url("#{cl_image_path character.photo}");'
-          .card-footer
-            h2.bold = character.name
-
-
-
+    .card-container
+      .card
+        .card-content
+          = link_to character_path(character) do
+            .card-image style='background-image: url("#{character.photo.url}");'
+        .card-footer
+          h2.bold = character.name
+          = link_to character_path(character), class: 'card_link-delete', method: :delete, remote: true do
+              i.fas.fa-times
