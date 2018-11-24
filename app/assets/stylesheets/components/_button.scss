@@ -46,6 +46,25 @@
   -webkit-transition: 0.08s ease-in;
 }
 
+.btn-white {
+  color: white;
+  border-color: white;
+  cursor: pointer;
+
+  &:hover {
+    background: $red;
+  }
+}
+
+.btn-black {
+
+  &:hover {
+    background: $red;
+    color: white;
+    border-color: white;
+  }
+}
+
 .fill:hover {
   color: whitesmoke;
 }

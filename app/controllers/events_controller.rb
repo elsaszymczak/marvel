@@ -6,6 +6,8 @@ class EventsController < ApplicationController
   end
 
   def show
+    @character = Character.new
+    @comic = Comic.new
   end
 
   def new
@@ -15,9 +17,16 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      redirect_to event_path(@event)
+      @event.reload
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render 'pages/home' }
+        format.js  # <-- idem
+      end
     end
   end
 

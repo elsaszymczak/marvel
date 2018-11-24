@@ -3,19 +3,35 @@
   // height: 100%;
   // width: 100%;
   margin-bottom: 30px;
+
+
+  ul {
+    list-style: none;
+    color: black;
+  }
+
+  li {
+    height: 100%;
+    list-style: none;
+  }
 }
+
+
+// #new-card {
+//   padding: 20px;
+// }
 
 .card-container {
   height: 300px;
   border: solid transparent 3px;
-  margin-bottom: 80px;
+  margin-bottom: 100px;
+  position: relative;
 }
 
 .card {
   height: 258px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   color: white;
-  position: relative;
   opacity: 1;
 
 }
@@ -29,16 +45,30 @@
   height: 100%;
   background-size: cover !important;
   background-position: center;
+}
 
+.card_link {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+
+  &:hover {
+    color: $red;
+  }
 }
 
 .card-footer {
   color: black;
    h2 {
     font-size: 20px;
+    color: black;
   }
 
 }
+
 
 
 
@@ -49,7 +79,8 @@
 }
 
 a:hover {
-    text-decoration: none;
+  text-decoration: none;
+  color: black;
 }
 
 .clearfix:after {
@@ -72,3 +103,6 @@ html[xmlns] .clearfix {
 * html .clearfix {
     height: 1%;
 }
+
+
+

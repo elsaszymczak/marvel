@@ -1,10 +1,15 @@
-= simple_form_for event, html: { class: 'form' } do |f|
-  h2.text-center.margin-bottom.bold ADD YOUR EVENT
-  = f.input :name
-  = f.input :wiki_link
-  = f.input :start_date, input_html: { class: "datepicker"}
-  = f.input :end_date, input_html: { class: "datepicker"}
-  = f.input :photo
-  = f.input :photo_cache, as: :hidden
-  .submit-btn.text-center
-    = f.button :submit, 'save'
+.wrapper.wrapper-marvel
+  .container
+    .row
+      .col-xs-12.col-md-4.col-md-offset-4
+        h2.text-center.margin-bottom.margin-top.white.bold ADD YOUR EVENT
+        = simple_form_for event, html: { class: 'form' } do |f|
+          h2.text-center.margin-bottom.bold ADD YOUR EVENT
+          = f.input :name, input_html: {class: 'border-bottom'}
+          = f.input :wiki_link, input_html: {class: 'border-bottom'}
+          = f.input :start_date, input_html: { class: "datepicker border-bottom"}
+          = f.input :end_date, input_html: { class: "datepicker border-bottom"}
+          = f.input :photo
+          = f.input :photo_cache, as: :hidden
+          .submit-btn.text-center
+            = f.button :submit, 'save', class: 'btn-black'

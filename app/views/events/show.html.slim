@@ -1,29 +1,35 @@
 = render 'shared/banner-show', element: @event
 .container
-  .title-container.margin-bottom.margin-top
-    h2.bold.margin-bottom.margin-top.medium COMICS
-    = link_to new_event_comic_path(@event) do
-      i.fa.fa-plus-circle
-  = link_to events_path, class: 'link' do
+  = link_to root_path, class: 'link link-bold padding-left-40' do
     i.fas.fa-long-arrow-alt-left
-    |  back to events
+    |  BACK TO EVENTS
+  .row
+    .cards
+      ul#comics
+        .padding-left
+          h2.bold.margin-bottom.margin-top.medium COMICS
+        - @event.comics.order(created_at: :asc).each do |comic|
+          = render 'comics/card', comic: comic
+
+.wrapper.wrapper-marvel
+  .container
     .row
-      .cards
-        - @event.comics.each do |comic|
-          .col-xs-12.col-md-3
-            = link_to comic_path(comic) do
-              = render 'shared/card', element: comic
+      .col-xs-12.col-md-4.col-md-offset-4
+        = render 'comics/form', event: @event, comic: @comic
+.container
   .title-container.margin-bottom.margin-top
-    h2.bold.margin-bottom.margin-top.medium CHARACTERS
-    = link_to new_event_character_path(@event) do
+    / = link_to new_event_character_path(@event) do
       i.fa.fa-plus-circle
+  .row
+    .cards.clearfix
+      ul#characters
+        .padding-left
+          h2.bold.margin-bottom.margin-top.medium CHARACTERS
+        - @event.characters.order(created_at: :asc).each do |character|
+          = render 'characters/card', character: character
+
+.wrapper.wrapper-marvel
+  .container
     .row
-      .cards
-        - @event.characters.each do |character|
-          .col-xs-12.col-md-3
-            = link_to character_path(character) do
-              = render 'shared/card', element: character
-
-
-
-
+      .col-xs-12.col-md-4.col-md-offset-4
+        = render 'characters/form', event: @event, character: @character

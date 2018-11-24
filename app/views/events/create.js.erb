@@ -1,0 +1,19 @@
+function refreshForm(innerHTML) {
+  const newEventForm = document.getElementById('new_event');
+  newEventForm.innerHTML = innerHTML;
+}
+
+function addEvent(eventHTML) {
+  const events = document.getElementById('events');
+  events.insertAdjacentHTML('beforeend', eventHTML);
+}
+
+<% if @event.errors.any? %>
+
+  refreshForm('<%= j render "events/form", event: @event %>');
+<% else %>
+  const newComicForm = document.getElementById('new_event')
+  const card ='<%= j render "events/card", event: @event %>'
+  addEvent(card);
+  refreshForm('<%= j render "events/form", event: Event.new %>');
+<% end %>

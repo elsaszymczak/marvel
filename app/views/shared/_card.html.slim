@@ -1,7 +1,8 @@
-
 .card-container
   .card
     .card-content
       .card-image style='background-image: url("#{element.photo}");'
+        = link_to event_path(element), class: 'card_link', method: :delete, remote: true do
+          i.fas.fa-times
     .card-footer
       h2.bold = element.name

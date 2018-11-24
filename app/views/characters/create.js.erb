@@ -1,0 +1,18 @@
+function refreshForm(innerHTML) {
+  const newCharacterForm = document.getElementById('new_character');
+  newCharacterForm.innerHTML = innerHTML;
+}
+
+function addCharacter(characterHTML) {
+  const characters = document.getElementById('characters');
+  characters.insertAdjacentHTML('beforeend', characterHTML);
+}
+
+<% if @character.errors.any? %>
+
+  refreshForm('<%= j render "characters/form", event: @event, character: @character %>');
+<% else %>
+  const card ='<%= j render "characters/card", character: @character %>'
+  addCharacter(card);
+  refreshForm('<%= j render "characters/form", event: @event, character: Character.new %>');
+<% end %>

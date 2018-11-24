@@ -9,8 +9,11 @@
       i.fa.fa-plus-circle
   .row
     .cards
-      - @events.each do |event|
-        div class='col-xs-12 col-md-3'
-          = link_to event_path(event) do
-            = render 'shared/card', element: event
+      ul#events
+        .padding-left
+          h1.bold.margin-bottom.margin-top.medium  FEATURED EVENTS
+        - @events.each do |event|
+          = render 'events/card', event: event
+
+= render 'events/form', event: @event
 

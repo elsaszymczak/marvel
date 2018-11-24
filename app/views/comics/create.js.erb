@@ -1,0 +1,19 @@
+function refreshForm(innerHTML) {
+  const newComicForm = document.getElementById('new_comic');
+  newComicForm.innerHTML = innerHTML;
+}
+
+function addComic(comicHTML) {
+  const comics = document.getElementById('comics');
+  comics.insertAdjacentHTML('beforeend', comicHTML);
+}
+
+<% if @comic.errors.any? %>
+
+  refreshForm('<%= j render "comics/form", event: @event, comic: @comic %>');
+<% else %>
+  const newComicForm = document.getElementById('new_comic')
+  const card ='<%= j render "comics/card", comic: @comic %>'
+  addComic(card);
+  refreshForm('<%= j render "comics/form", event: @event, comic: Comic.new %>');
+<% end %>

@@ -1,0 +1,8 @@
+
+        h2.text-center.margin-bottom.margin-top.white.bold ADD YOUR COMIC
+        = simple_form_for([event, comic], remote: true) do |f|
+          = f.input :name, input_html: {class: 'border-bottom'}
+          = f.input :photo
+          = f.input :photo_cache, as: :hidden
+          .submit-btn.text-center
+            = f.button :submit, 'save', class: 'btn-black'

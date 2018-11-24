@@ -2,7 +2,7 @@ class ComicsController < ApplicationController
   before_action :set_comic, only: [:show, :destroy]
 
   def index
-    @comics = Comic.all
+    @comics = Comic.all.order(created_at: :asc)
   end
 
   def show
@@ -12,14 +12,24 @@ class ComicsController < ApplicationController
 
   def new
     @comic = Comic.new
+    @event = Event.find(params[:event_id])
   end
 
   def create
     @comic = Comic.new(comic_params)
+    @event = Event.find(params[:event_id])
+    @comic.event = @event
     if @comic.save
-      redirect_to comic_path(@comic)
+      @comic.reload
+      respond_to do |format|
+        format.html { redirect_to event_path(@event) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render 'events/show' }
+        format.js  # <-- idem
+      end
     end
   end
 

@@ -2,7 +2,7 @@ class CharactersController < ApplicationController
     before_action :set_character, only: [:show, :destroy]
 
   def index
-    @characters = Character.all
+    @characters = Character.all.order(created_at: :desc)
   end
 
   def show
@@ -12,15 +12,25 @@ class CharactersController < ApplicationController
 
 
   def new
+    @event = Event.find(params[:event_id])
     @character = Character.new
   end
 
   def create
+    @event = Event.find(params[:event_id])
     @character = Character.new(character_params)
+    @character.event = @event
     if @character.save
-      redirect_to character_path(@character)
+       @character.reload
+      respond_to do |format|
+        format.html { redirect_to event_path(@event) }
+        format.js  { render layout: false, content_type: 'text/javascript' } # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render 'events/show' }
+        format.js  # <-- idem
+      end
     end
   end
 

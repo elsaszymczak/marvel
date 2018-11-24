@@ -1,5 +1,14 @@
 .link {
-  color: black
+  color: black;
+
+  &:hover {
+    color: red
+  }
+}
+
+.link-bold {
+  font-weight: bold;
+  font-size: 25px;
 }
 
 // a:hover {
