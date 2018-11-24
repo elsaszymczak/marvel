@@ -1,11 +1,25 @@
+/ .col-xs-12.col-sm-6.col-md-4
+/   li data-id='comic-#{comic.id}'
+/     = link_to comic_path(comic) do
+/         .card-container
+/           .card
+/             .card-content
+/               .card-image style='background-image: url("#{comic.photo.url}");'
+/                 = link_to comic_path(comic), class: 'card_link', method: :delete, remote: true do
+/                   i.fas.fa-times
+/             .card-footer
+/               h2.bold = comic.name
+
+
+
 .col-xs-12.col-sm-6.col-md-4
   li data-id='comic-#{comic.id}'
-    = link_to comic_path(comic) do
-        .card-container
-          .card
-            .card-content
-              .card-image style='background-image: url("#{comic.photo.url}");'
-                = link_to comic_path(comic), class: 'card_link', method: :delete, remote: true do
-                  i.fas.fa-times
-            .card-footer
-              h2.bold = comic.name
+    .card-container
+      .card
+        .card-content
+          = link_to comic_path(comic) do
+            .card-image style='background-image: url("#{comic.photo.url}");'
+        .card-footer
+          h2.bold = comic.name
+          = link_to comic_path(comic), class: 'card_link-delete', method: :delete, remote: true do
+              i.fas.fa-times

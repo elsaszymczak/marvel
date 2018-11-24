@@ -2,8 +2,7 @@ class CharactersController < ApplicationController
     before_action :set_character, only: [:show, :destroy]
 
   def index
-    @characters = Character.all.order(created_at: :desc)
-  end
+    @characters = Character.all
 
   def show
     @characters = Character.all
