@@ -3,17 +3,38 @@
 
 = render 'shared/banner-home', element: @event
 .container
-  .title-container.margin-bottom.margin-top
-    h1.bold FEATURED EVENTS
-    = link_to new_event_path do
-      i.fa.fa-plus-circle
+  h1.bold#home-page THE BEST OF MARVEL
   .row
     .cards
       ul#events
         .padding-left
-          h1.bold.margin-bottom.margin-top.medium  FEATURED EVENTS
+          / h1.bold.margin-bottom.margin-top.medium  FEATURED EVENTS
+          .title-container
+            h2.bold.margin-bottom.margin-top.medium FEATURED EVENTS
+            = link_to new_event_path, id: 'new-event' do
+              i.fa.fa-plus-circle
         - @events.each do |event|
           = render 'events/card', event: event
+  .text-center
+    = link_to 'ADD YOUR EVENT', new_event_path, class: 'btn-marvel'
+  .row
+    .cards
+      ul#comics
+        .padding-left
+          h2.bold.margin-bottom.margin-top.medium  FEATURED COMICS
+        - @comics.each do |comic|
+          = render 'comics/card', comic: comic
 
-= render 'events/form', event: @event
+  .row
+    .cards
+      ul#characters
+        .padding-left
+          h2.bold.margin-bottom.margin-top.medium  FEATURED CHARACTERS
+        - @characters.each do |character|
+          = render 'characters/card', character: character
+
+/ = render 'events/form', event: @event
+
+
+
 

@@ -17,7 +17,9 @@
 
 .wrapper-marvel {
   height: 100vh;
-  background-image: url('space.jpeg')
+  background-image: url('space.jpeg');
+  display: flex;
+  align-items: center;
 }
 
 .white {

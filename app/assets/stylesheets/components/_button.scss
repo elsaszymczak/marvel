@@ -46,25 +46,6 @@
   -webkit-transition: 0.08s ease-in;
 }
 
-.btn-white {
-  color: white;
-  border-color: white;
-  cursor: pointer;
-
-  &:hover {
-    background: $red;
-  }
-}
-
-.btn-black {
-
-  &:hover {
-    background: $red;
-    color: white;
-    border-color: white;
-  }
-}
-
 .fill:hover {
   color: whitesmoke;
 }
@@ -85,64 +66,88 @@
   top: 0;
 }
 
-  // .btn {
-  //   border: none;
-  //   font-family: inherit;
-  //   font-size: inherit;
-  //   color: black;
-  //   cursor: pointer;
-  //   padding: 25px 80px;
-  //   display: inline-block;
-  //   margin: 15px 30px;
-  //   text-transform: uppercase;
-  //   letter-spacing: 1px;
-  //   font-weight: 700;
-  //   outline: none;
-  //   position: relative;
-  //   -webkit-transition: all 0.3s;
-  //   -moz-transition: all 0.3s;
-  //   transition: all 0.3s;
-  //   border: 3px solid $red;
-  // }
-  // .btn:before {
-  //   // font-family: 'icomoon';
-  //   speak: none;
-  //   font-style: normal;
-  //   font-weight: normal;
-  //   font-variant: normal;
-  //   text-transform: none;
-  //   line-height: 1;
-  //   position: relative;
-  //   -webkit-font-smoothing: antialiased;
-  //   -webkit-transition: top 0.09s ease-in;
+.btn-medium {
+  color: #999999;
+  border: 1px solid #999999;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+}
+.btn-medium:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: #999999;
+}
+.btn-treehouse {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #6AD58B;
+  transition: background 0.3s ease;
+}
+.btn-treehouse:hover {
+  opacity: 1;
+  background: #3ac162;
+  text-decoration: none;
+  color: white;
+}
 
-  // }
+/* Build your own button classes ! */
+}
 
-  // .btn:after {
-  //   content: '';
-  //   position: absolute;
-  //   z-index: -1;
-  //   -webkit-transition: all 0.3s;
-  //   -moz-transition: all 0.3s;
-  //   transition: all 0.3s;
-  //   width: 0%;
-  //   height: 100%;
-  //   top: 0;
-  //   left: 0;
+
+.btn-white {
+  color: white;
+  border-color: white;
+  cursor: pointer;
+
+  &:hover {
+    background: $red;
+  }
+}
+
+.btn-black {
+
+  &:hover {
+    background: $red;
+    color: white;
+    border-color: white;
+  }
+}
+
+.btn-red {
+  height: 20px;
+  background: red;
+  // border: solid red 3px;
+  // border-radius: 6px;
+  // border: solid $red 3px;
+
+  // &:hover {
   //   background: $red;
-  // }
-
-
-  // .btn:hover,
-  // .btn:active {
   //   color: white;
-  //   background: $red;
+  //   border-color: white;
   // }
+}
 
-  // .btn:hover:after,
-  // .btn:active:after {
-  //   width: 100%;
-  // }
+.btn-marvel {
+  height: 20px;
+  background: $red;
+  padding: 10px;
+  color: white;
+  border-radius: 6px;
+
+  // border: solid red 3px;
+  //
+
+  &:hover {
+    border: solid $red 3px;
+    color: black;
+    background: transparent;
+
+    // border-color: white;
+  }
 }
 
 

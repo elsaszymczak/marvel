@@ -1,1 +1,15 @@
 // Specific CSS for your home-page
+
+
+#home-page {
+  text-align: center
+}
+
+
+@media (max-width: 900px) {
+
+  #new-event {
+    display: none;
+  }
+}
+
