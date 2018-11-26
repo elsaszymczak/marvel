@@ -1,9 +1,9 @@
-.wrapper.wrapper-marvel
+.wrapper.wrapper-marvel.wrapper-marvel-big
   .container
     .row
       .col-xs-12.col-md-4.col-md-offset-4
         h2.text-center.margin-bottom.margin-top.white.bold ADD YOUR EVENT
-        = simple_form_for event, html: { class: 'form' } do |f|
+        = simple_form_for event, html: { id: 'form-event' } do |f|
           h2.text-center.margin-bottom.bold ADD YOUR EVENT
           = f.input :name, input_html: {class: 'border-bottom'}
           = f.input :wiki_link, input_html: {class: 'border-bottom'}

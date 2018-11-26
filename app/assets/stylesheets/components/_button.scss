@@ -21,82 +21,51 @@
 
 .submit-btn {
   .btn {
-  position: relative;
-  //display:block;
-  height: 45px;
-  width: 150px;
-  margin: 10px 7px;
-  padding: 5px 5px;
-  font-weight: 700;
-  font-size: 15px;
-  letter-spacing: 2px;
-  color: #383736;
-  border: 2px #383736 solid;
-  border-radius: 4px;
-  text-transform: uppercase;
-  outline: 0;
-  overflow:hidden;
-  background: none;
-  z-index: 1;
-  cursor: pointer;
-  transition:         0.08s ease-in;
-  -o-transition:      0.08s ease-in;
-  -ms-transition:     0.08s ease-in;
-  -moz-transition:    0.08s ease-in;
-  -webkit-transition: 0.08s ease-in;
-}
+    position: relative;
+    //display:block;
+    height: 45px;
+    width: 150px;
+    margin: 10px 7px;
+    padding: 5px 5px;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: #383736;
+    border: 2px #383736 solid;
+    border-radius: 4px;
+    text-transform: uppercase;
+    outline: 0;
+    overflow:hidden;
+    background: none;
+    z-index: 1;
+    cursor: pointer;
+    transition:         0.08s ease-in;
+    -o-transition:      0.08s ease-in;
+    -ms-transition:     0.08s ease-in;
+    -moz-transition:    0.08s ease-in;
+    -webkit-transition: 0.08s ease-in;
+  }
 
-.fill:hover {
-  color: whitesmoke;
-}
+  .fill:hover {
+    color: whitesmoke;
+  }
 
-.fill:before {
-  content: "";
-  position: absolute;
-  background: #383736;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 100%;
-  z-index: -1;
-  -webkit-transition: top 0.09s ease-in;
-}
+  .fill:before {
+    content: "";
+    position: absolute;
+    background: #383736;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: -1;
+    -webkit-transition: top 0.09s ease-in;
+  }
 
-.fill:hover:before {
-  top: 0;
+  .fill:hover:before {
+    top: 0;
+  }
 }
-
-.btn-medium {
-  color: #999999;
-  border: 1px solid #999999;
-  padding: 10px 15px;
-  border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
-}
-.btn-medium:hover {
-  opacity: 1;
-  text-decoration: none;
-  color: #999999;
-}
-.btn-treehouse {
-  color: white;
-  padding: 10px 15px;
-  border-radius: 4px;
-  font-weight: bold;
-  background: #6AD58B;
-  transition: background 0.3s ease;
-}
-.btn-treehouse:hover {
-  opacity: 1;
-  background: #3ac162;
-  text-decoration: none;
-  color: white;
-}
-
-/* Build your own button classes ! */
-}
-
 
 .btn-white {
   color: white;
@@ -117,19 +86,7 @@
   }
 }
 
-.btn-red {
-  height: 20px;
-  background: red;
-  // border: solid red 3px;
-  // border-radius: 6px;
-  // border: solid $red 3px;
 
-  // &:hover {
-  //   background: $red;
-  //   color: white;
-  //   border-color: white;
-  // }
-}
 
 .btn-marvel {
   height: 20px;
@@ -137,16 +94,16 @@
   padding: 10px;
   color: white;
   border-radius: 6px;
+  border: solid $black 3px;
+  color: black;
+  background: transparent;
+  font-weight: bold;
 
-  // border: solid red 3px;
-  //
 
   &:hover {
-    border: solid $red 3px;
-    color: black;
-    background: transparent;
-
-    // border-color: white;
+    background: $red;
+    color: white;
+    border: none;
   }
 }
 

@@ -1,4 +1,4 @@
-h2.text-center.margin-bottom.margin-top.white.bold ADD YOUR COMIC
+h2.text-center.white.bold ADD YOUR COMIC
 = simple_form_for([event, comic], remote: true) do |f|
   = f.input :name, input_html: {class: 'border-bottom'}
   = f.input :photo

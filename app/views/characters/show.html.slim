@@ -3,7 +3,7 @@
   - if @character.comics.any?
       h2.bold.margin-bottom.margin-top.medium #{@character.name.upcase}: COMICS
   .row
-    .cards.clearfix
+    .cards
       - @character.comics.each do |comic|
         = render 'comics/card', comic: comic
 

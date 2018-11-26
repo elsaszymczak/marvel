@@ -15,11 +15,24 @@
   margin-top: 60px
 }
 
+.margin-top-30 {
+  margin-top: 30px
+
+
+}
+
 .wrapper-marvel {
-  height: 100vh;
   background-image: url('space.jpeg');
   display: flex;
   align-items: center;
+}
+
+.wrapper-marvel-small {
+  height: 50vh;
+}
+
+.wrapper-marvel-big {
+  height: 100vh;
 }
 
 .white {
@@ -56,4 +69,21 @@ a {
 
 .padding-left-40 {
   padding-left: 40px;
+}
+
+
+@media (max-width: 900px) {
+
+  .wrapper-marvel {
+    display: block;
+    height: 100%;
+  }
+
+   h1 {
+    font-size: 25px !important;
+  }
+
+  h2 {
+    font-size: 20px !important;
+  }
 }
