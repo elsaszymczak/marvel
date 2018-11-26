@@ -7,8 +7,8 @@
           h2.text-center.margin-bottom.bold ADD YOUR EVENT
           = f.input :name, input_html: {class: 'border-bottom'}
           = f.input :wiki_link, input_html: {class: 'border-bottom'}
-          = f.input :start_date, input_html: { class: "datepicker border-bottom"}
-          = f.input :end_date, input_html: { class: "datepicker border-bottom"}
+          = f.input :start_date, as: :string, input_html: { class: "datepicker border-bottom"}
+          = f.input :end_date, as: :string, input_html: { class: "datepicker border-bottom"}
           = f.input :photo
           = f.input :photo_cache, as: :hidden
           .submit-btn.text-center
