@@ -17,15 +17,16 @@
   text-decoration: none;
   color: white;
   font-weight: bold;
-  // font-size: 24px;
+  font-size: 15px;
   padding: 0px 10px;
 }
 .footer-links a:hover {
-  // opacity: 1;
+  border-bottom: solid $red 5px;
+  color: white;
+  text-decoration: none;
+  padding-bottom: 5px;
 }
-.footer .fa-heart {
-  color: #D23333;
-}
+
 
 @media (max-width: 900px) {
 

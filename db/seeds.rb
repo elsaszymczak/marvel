@@ -19,7 +19,10 @@ puts "-----------------------------"
 puts "Fetching Marvel Onslaught api"
 puts "-----------------------------"
 
-event_url = 'http://gateway.marvel.com/v1/public/events/154?ts=1&apikey=36eb135a7d2a0fff3f10d2d9c735e032&hash=793e1ad819edff8e61c3680d8641f179'
+api_key = ENV['MARVEL_API_KEY']
+marvel_hash = ENV['MARVEL_HASH']
+
+event_url = 'http://gateway.marvel.com/v1/public/events/154?ts=1&apikey=' + api_key + '&hash=' + marvel_hash
 event_serialized = open(event_url).read
 event_hash = JSON.parse(event_serialized)
 event = event_hash['data']['results'][0]

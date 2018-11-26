@@ -22,16 +22,21 @@
       ul#comics
         .padding-left
           h2.bold.margin-bottom.margin-top.medium  FEATURED COMICS
-        - @comics.each do |comic|
+        - @comics.limit(3).each do |comic|
           = render 'comics/card', comic: comic
+  .text-center
+    = link_to 'SEE ALL', comics_path, class: 'btn-marvel'
 
   .row
     .cards
       ul#characters
         .padding-left
           h2.bold.margin-bottom.margin-top.medium  FEATURED CHARACTERS
-        - @characters.each do |character|
+        - @characters.limit(3).each do |character|
           = render 'characters/card', character: character
+  .text-center
+    .margin-bottom-60
+      = link_to 'SEE ALL', characters_path, class: 'btn-marvel'
 
 / = render 'events/form', event: @event
 

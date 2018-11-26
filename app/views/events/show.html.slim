@@ -8,15 +8,17 @@
 
   .row
     #event-information.padding-left-40
-      .col-xs-6
+      .col-xs-12.col-md-6
         .right-side
           h2 = @event.name
-      .col-xs-6
+      .col-xs-12.col-md-6
         .left-side
-          p = @event.start_date
-          p = @event.end_date
-          = link_to "Learn more", @event.wiki_link, class: 'link-bold'
-          i.fas.fa-long-arrow-alt-right
+          span
+          =    @event.start_date.strftime("%B, %Y") + ' - '
+          =  @event.end_date.strftime("%B, %Y")
+          #wiki-link
+            = link_to "LEARN MORE", @event.wiki_link, class: 'link link-bold'
+            i.fas.fa-long-arrow-alt-right
   .row
     .cards
       ul#comics

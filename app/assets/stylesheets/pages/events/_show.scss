@@ -1,7 +1,4 @@
 #event-information {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   margin-top: 30px;
 }
 
@@ -15,4 +12,14 @@
   h2 {
     font-weight: bold;
   }
+}
+
+
+.left-side a {
+  padding-right: 10px;
+}
+
+#wiki-link {
+  display: flex;
+  align-items: center;
 }
